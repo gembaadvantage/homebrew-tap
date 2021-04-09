@@ -5,24 +5,24 @@
 class Uplift < Formula
   desc "Semantic versioning the easy way"
   homepage "https://github.com/gembaadvantage/uplift"
-  version "0.1.0"
+  version "0.1.1"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.0/uplift_0.1.0_darwin-x86_64.tar.gz"
-    sha256 "2bbf9396680ac9190781ca2e5e2863dc0a889e2ed87276869a44b9de7cead62d"
+    url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.1/uplift_0.1.1_darwin-x86_64.tar.gz"
+    sha256 "94d5d980cd06013bb7b4cb0fee8f72f76828cacd6579dc5aba1391cedad9291f"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.0/uplift_0.1.0_darwin-arm64.tar.gz"
-    sha256 "afd9422766fef0de076c77cf0301a1a1a1526e20a0bf0d97a9471b437810b950"
+    url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.1/uplift_0.1.1_darwin-arm64.tar.gz"
+    sha256 "2a5bdc4834407c8780eb463916da68b00061078de2daf2eea3408267cad986fc"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.0/uplift_0.1.0_linux-x86_64.tar.gz"
-    sha256 "adfccc0113d8579a95c8bb4de0a67fe88d7416118ac4c658ef04800ef91c035a"
+    url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.1/uplift_0.1.1_linux-x86_64.tar.gz"
+    sha256 "8be1b1a4a5c3d45271979b5e927e70d9373ace79ff9f1f97d39de82b1b932cbe"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.0/uplift_0.1.0_linux-arm64.tar.gz"
-    sha256 "9010d42696f70e20a236b4f754698854e52c8243300e2ec9abb87ac9702b7afe"
+    url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.1/uplift_0.1.1_linux-arm64.tar.gz"
+    sha256 "513afb4860eb62d2bdca1705a9f1f6c3791de0dd6d881e882f25267b58d6c5c1"
   end
 
   def install
