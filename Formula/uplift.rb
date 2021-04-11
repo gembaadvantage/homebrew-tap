@@ -10,19 +10,19 @@ class Uplift < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.1/uplift_0.1.1_darwin-x86_64.tar.gz"
-    sha256 "94d5d980cd06013bb7b4cb0fee8f72f76828cacd6579dc5aba1391cedad9291f"
+    sha256 "232521ec46172a23e96bcc4d1e254d6e692da4b67e548474baffa9860329a016"
   end
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.1/uplift_0.1.1_darwin-arm64.tar.gz"
-    sha256 "2a5bdc4834407c8780eb463916da68b00061078de2daf2eea3408267cad986fc"
+    sha256 "9e39f8433a182c6bfa92294edb3e166dffdeee6df504bdb5497a52d516d1678d"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.1/uplift_0.1.1_linux-x86_64.tar.gz"
-    sha256 "8be1b1a4a5c3d45271979b5e927e70d9373ace79ff9f1f97d39de82b1b932cbe"
+    sha256 "b6708e0a2a6b439344c40ca5f1c1af0de03b2e32656de8bc176d62c24c7124af"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.1/uplift_0.1.1_linux-arm64.tar.gz"
-    sha256 "513afb4860eb62d2bdca1705a9f1f6c3791de0dd6d881e882f25267b58d6c5c1"
+    sha256 "c2dd0e371a584a684a96f4adcddb25928a5d27402d1ba36bec6d02dbd8bcf216"
   end
 
   def install
