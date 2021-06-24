@@ -5,24 +5,29 @@
 class Uplift < Formula
   desc "Semantic versioning the easy way"
   homepage "https://github.com/gembaadvantage/uplift"
-  version "0.1.1"
+  version "0.2.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.1/uplift_0.1.1_darwin-x86_64.tar.gz"
-    sha256 "232521ec46172a23e96bcc4d1e254d6e692da4b67e548474baffa9860329a016"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/gembaadvantage/uplift/releases/download/v0.2.0/uplift_0.2.0_darwin-x86_64.tar.gz"
+      sha256 "795582296c35aa28b5fee52873efdd4fbcb0e1001c772171c0dab9fbc345d0b7"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/gembaadvantage/uplift/releases/download/v0.2.0/uplift_0.2.0_darwin-arm64.tar.gz"
+      sha256 "4fa7e4e52e912d89fbfa4b77f34b05357adf3de96d34f28154797ae11a59aec9"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.1/uplift_0.1.1_darwin-arm64.tar.gz"
-    sha256 "9e39f8433a182c6bfa92294edb3e166dffdeee6df504bdb5497a52d516d1678d"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.1/uplift_0.1.1_linux-x86_64.tar.gz"
-    sha256 "b6708e0a2a6b439344c40ca5f1c1af0de03b2e32656de8bc176d62c24c7124af"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/gembaadvantage/uplift/releases/download/v0.1.1/uplift_0.1.1_linux-arm64.tar.gz"
-    sha256 "c2dd0e371a584a684a96f4adcddb25928a5d27402d1ba36bec6d02dbd8bcf216"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/gembaadvantage/uplift/releases/download/v0.2.0/uplift_0.2.0_linux-x86_64.tar.gz"
+      sha256 "572a46448c02e951d5091b8d100da2781565afa48dd2bcdb1b8ea79564fcf2ff"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gembaadvantage/uplift/releases/download/v0.2.0/uplift_0.2.0_linux-arm64.tar.gz"
+      sha256 "800ab47cba213b32c2cdc4c7bfc453ada679dc695db2a505f09eef3fa945e172"
+    end
   end
 
   def install
