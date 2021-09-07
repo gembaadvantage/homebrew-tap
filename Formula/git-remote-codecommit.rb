@@ -12,22 +12,22 @@ class GitRemoteCodecommit < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/gembaadvantage/git-remote-codecommit/releases/download/v1.0.0/git-remote-codecommit_v1.0.0_darwin-x86_64.tar.gz"
-      sha256 "e2a44274e7c056a1ed33db7571fb4a5a2f64aad4e0d94d6dfe22e84b5480bdbb"
+      sha256 "10005ea9d74a8275101446834cd25350099b2d86ab47b7781669ef36f3cea21f"
     end
     if Hardware::CPU.arm?
       url "https://github.com/gembaadvantage/git-remote-codecommit/releases/download/v1.0.0/git-remote-codecommit_v1.0.0_darwin-arm64.tar.gz"
-      sha256 "58f4d0a02906060b41b7aabbc85491129bbd84cf22a882f16f451db215dc1e61"
+      sha256 "915a5990e0cc54b05b448da5c262e1af6f6d7ebbb905f6a64ece4b879155c740"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/gembaadvantage/git-remote-codecommit/releases/download/v1.0.0/git-remote-codecommit_v1.0.0_linux-x86_64.tar.gz"
-      sha256 "87f13572fe9cfc33bae887a2db1af466d140037078dbfd27d833fc23f9593617"
+      sha256 "ebfe879aed518950e21c06c0b92b17be3fb1e1f5f4c7d78e492aa0dcc99c94bd"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/gembaadvantage/git-remote-codecommit/releases/download/v1.0.0/git-remote-codecommit_v1.0.0_linux-arm64.tar.gz"
-      sha256 "cbc262740b9ebdbeff1eec53dcf521e99e33909c8a41cf73adc2f876979731fa"
+      sha256 "0878b350c8853f78b36e1d7c58a226d878316c569ec4714746935b696488f451"
     end
   end
 
