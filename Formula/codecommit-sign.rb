@@ -5,29 +5,29 @@
 class CodecommitSign < Formula
   desc "Generate a signed AWS V4 CodeCommit URL directly from an IAM role. No dedicated CodeCommit credentials needed"
   homepage "https://github.com/gembaadvantage/codecommit-sign"
-  version "1.1.0"
+  version "1.2.0"
   license "MIT"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.1.0/codecommit-sign_1.1.0_darwin-x86_64.tar.gz"
-      sha256 "6824b5d13a5e6078a9c2961dd25fef09e8ec8a813d9e7a37298b390c97ed65ff"
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.2.0/codecommit-sign_1.2.0_darwin-x86_64.tar.gz"
+      sha256 "0d15bb46edfded618c85b8bd4917f8bcae667a2ca28ff4b52a9bc4546dfe8b38"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.1.0/codecommit-sign_1.1.0_darwin-arm64.tar.gz"
-      sha256 "3914dbbe6b1bf5f2afafbc5510bfbcf71301bed592694d476bd3e02c40d288da"
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.2.0/codecommit-sign_1.2.0_darwin-arm64.tar.gz"
+      sha256 "7f16eb0adc4107ac68326bf8208688d0bbbbcdc7f620cf5232346618be53c07f"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.1.0/codecommit-sign_1.1.0_linux-x86_64.tar.gz"
-      sha256 "b31aae387e629fc66018fc6a4c91d4ace29777d544911d5524c33aff1ef1b17c"
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.2.0/codecommit-sign_1.2.0_linux-x86_64.tar.gz"
+      sha256 "03d2025764370619a092e658ab2eac5b86fd011f414a0c4b99c4dbfeecbe4034"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.1.0/codecommit-sign_1.1.0_linux-arm64.tar.gz"
-      sha256 "b0c139860954f2aa96cf38362b2150172f702d2c1f7bc5dea7a4c55f0dbcaed6"
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.2.0/codecommit-sign_1.2.0_linux-arm64.tar.gz"
+      sha256 "8d883065db1ac0d883ac3d81ad668a2db3cd8723d48c93b1ea25b6a6d8cf76f1"
     end
   end
 
