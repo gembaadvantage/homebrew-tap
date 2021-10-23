@@ -5,47 +5,85 @@
 class Uplift < Formula
   desc "Semantic versioning the easy way"
   homepage "https://github.com/gembaadvantage/uplift"
-  version "1.1.0"
+  version "1.2.0"
   license "MIT"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v1.1.0/uplift_1.1.0_darwin-x86_64.tar.gz"
-      sha256 "9f79fb9dbf43db34284d31af3e7eb7e8b74980aa9e1d5ded49a2e01dfb814b09"
+      url "https://github.com/gembaadvantage/uplift/releases/download/v1.2.0/uplift_1.2.0_darwin-x86_64.tar.gz"
+      sha256 "12ff56cde5318dfdff406664eb6e9daf1132a96d2b80218b99e7bdeff018cc03"
+
+      def install
+        bin.install "uplift"
+
+        bash_output = Utils.safe_popen_read(bin/"uplift", "completion", "bash")
+        (bash_completion/"uplift").write bash_output
+
+        zsh_output = Utils.safe_popen_read(bin/"uplift", "completion", "zsh")
+        (zsh_completion/"_uplift").write zsh_output
+
+        fish_output = Utils.safe_popen_read(bin/"uplift", "completion", "fish")
+        (fish_completion/"uplift.fish").write fish_output
+      end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v1.1.0/uplift_1.1.0_darwin-arm64.tar.gz"
-      sha256 "a29df9d2fa115fc736ef69a89f3f755246f4399ea491954ac8a2517884616148"
+      url "https://github.com/gembaadvantage/uplift/releases/download/v1.2.0/uplift_1.2.0_darwin-arm64.tar.gz"
+      sha256 "a210a7957218cc1971dcaf92c2b8f08f072989eea3ac9d5d5520ff1fc480dabc"
+
+      def install
+        bin.install "uplift"
+
+        bash_output = Utils.safe_popen_read(bin/"uplift", "completion", "bash")
+        (bash_completion/"uplift").write bash_output
+
+        zsh_output = Utils.safe_popen_read(bin/"uplift", "completion", "zsh")
+        (zsh_completion/"_uplift").write zsh_output
+
+        fish_output = Utils.safe_popen_read(bin/"uplift", "completion", "fish")
+        (fish_completion/"uplift.fish").write fish_output
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v1.1.0/uplift_1.1.0_linux-arm64.tar.gz"
-      sha256 "5407e81dbc1ae9fa5a71625f884fd7277214205d0f29cb78c01fe75640ca06d4"
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v1.1.0/uplift_1.1.0_linux-x86_64.tar.gz"
-      sha256 "c03ed1fdbbea0751da11bdb566bdd255e2851c9886b432a67110762d08179f78"
+      url "https://github.com/gembaadvantage/uplift/releases/download/v1.2.0/uplift_1.2.0_linux-x86_64.tar.gz"
+      sha256 "cec907874f1f66cf63f2ec5060c18e7e2756e243affd2fc073bb18da5a07a9bc"
+
+      def install
+        bin.install "uplift"
+
+        bash_output = Utils.safe_popen_read(bin/"uplift", "completion", "bash")
+        (bash_completion/"uplift").write bash_output
+
+        zsh_output = Utils.safe_popen_read(bin/"uplift", "completion", "zsh")
+        (zsh_completion/"_uplift").write zsh_output
+
+        fish_output = Utils.safe_popen_read(bin/"uplift", "completion", "fish")
+        (fish_completion/"uplift.fish").write fish_output
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gembaadvantage/uplift/releases/download/v1.2.0/uplift_1.2.0_linux-arm64.tar.gz"
+      sha256 "49009f6af291ba1ba023f471740c0bf2ae47c636d07de320037bbd89c6925bae"
+
+      def install
+        bin.install "uplift"
+
+        bash_output = Utils.safe_popen_read(bin/"uplift", "completion", "bash")
+        (bash_completion/"uplift").write bash_output
+
+        zsh_output = Utils.safe_popen_read(bin/"uplift", "completion", "zsh")
+        (zsh_completion/"_uplift").write zsh_output
+
+        fish_output = Utils.safe_popen_read(bin/"uplift", "completion", "fish")
+        (fish_completion/"uplift.fish").write fish_output
+      end
     end
   end
 
   depends_on "go" => :optional
   depends_on "git"
-
-  def install
-    bin.install "uplift"
-
-    bash_output = Utils.safe_popen_read(bin/"uplift", "completion", "bash")
-    (bash_completion/"uplift").write bash_output
-
-    zsh_output = Utils.safe_popen_read(bin/"uplift", "completion", "zsh")
-    (zsh_completion/"_uplift").write zsh_output
-
-    fish_output = Utils.safe_popen_read(bin/"uplift", "completion", "fish")
-    (fish_completion/"uplift.fish").write fish_output
-  end
 
   test do
     installed_version = shell_output("#{bin}/uplift version --short 2>&1")
