@@ -5,43 +5,81 @@
 class CodecommitSign < Formula
   desc "Generate a signed AWS V4 CodeCommit URL directly from an IAM role. No dedicated CodeCommit credentials needed"
   homepage "https://github.com/gembaadvantage/codecommit-sign"
-  version "1.2.0"
+  version "1.3.0"
   license "MIT"
-  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.2.0/codecommit-sign_1.2.0_darwin-x86_64.tar.gz"
-      sha256 "0d15bb46edfded618c85b8bd4917f8bcae667a2ca28ff4b52a9bc4546dfe8b38"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.2.0/codecommit-sign_1.2.0_darwin-arm64.tar.gz"
-      sha256 "7f16eb0adc4107ac68326bf8208688d0bbbbcdc7f620cf5232346618be53c07f"
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.0/codecommit-sign_1.3.0_darwin-arm64.tar.gz"
+      sha256 "3b7683d7d17fb084f744aeff057c4c7796a80f36360c1312706069e03b64da7d"
+
+      def install
+        bin.install "codecommit-sign"
+
+        bash_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "bash")
+        (bash_completion/"codecommit-sign").write bash_output
+
+        zsh_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "zsh")
+        (zsh_completion/"_codecommit-sign").write zsh_output
+
+        fish_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "fish")
+        (fish_completion/"codecommit-sign.fish").write fish_output
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.0/codecommit-sign_1.3.0_darwin-x86_64.tar.gz"
+      sha256 "e7a59ca8e5d969c77dcb8df469ea8e900eaf40fbe585c26d63032f991d45085a"
+
+      def install
+        bin.install "codecommit-sign"
+
+        bash_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "bash")
+        (bash_completion/"codecommit-sign").write bash_output
+
+        zsh_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "zsh")
+        (zsh_completion/"_codecommit-sign").write zsh_output
+
+        fish_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "fish")
+        (fish_completion/"codecommit-sign.fish").write fish_output
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.2.0/codecommit-sign_1.2.0_linux-x86_64.tar.gz"
-      sha256 "03d2025764370619a092e658ab2eac5b86fd011f414a0c4b99c4dbfeecbe4034"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.2.0/codecommit-sign_1.2.0_linux-arm64.tar.gz"
-      sha256 "8d883065db1ac0d883ac3d81ad668a2db3cd8723d48c93b1ea25b6a6d8cf76f1"
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.0/codecommit-sign_1.3.0_linux-arm64.tar.gz"
+      sha256 "2552ffd537a93bbda1b2a5a8db282f28274930bba23e3cd15711b22dbe823467"
+
+      def install
+        bin.install "codecommit-sign"
+
+        bash_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "bash")
+        (bash_completion/"codecommit-sign").write bash_output
+
+        zsh_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "zsh")
+        (zsh_completion/"_codecommit-sign").write zsh_output
+
+        fish_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "fish")
+        (fish_completion/"codecommit-sign.fish").write fish_output
+      end
     end
-  end
+    if Hardware::CPU.intel?
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.0/codecommit-sign_1.3.0_linux-x86_64.tar.gz"
+      sha256 "8e8b5d3b025692804d39f035e4fd3125874c2bd850e11f53c2e99516e72da4f1"
 
-  def install
-    bin.install "codecommit-sign"
+      def install
+        bin.install "codecommit-sign"
 
-    bash_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "bash")
-    (bash_completion/"codecommit-sign").write bash_output
+        bash_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "bash")
+        (bash_completion/"codecommit-sign").write bash_output
 
-    zsh_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "zsh")
-    (zsh_completion/"_codecommit-sign").write zsh_output
+        zsh_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "zsh")
+        (zsh_completion/"_codecommit-sign").write zsh_output
 
-    fish_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "fish")
-    (fish_completion/"codecommit-sign.fish").write fish_output
+        fish_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "fish")
+        (fish_completion/"codecommit-sign.fish").write fish_output
+      end
+    end
   end
 
   test do
