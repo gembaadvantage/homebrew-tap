@@ -5,13 +5,13 @@
 class Octo < Formula
   desc "Generate idiomatic Go files from AWS CloudFormation specifications"
   homepage "https://github.com/gembaadvantage/octo"
-  version "0.9.0"
+  version "0.10.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/octo/releases/download/v0.9.0/octo_0.9.0_darwin-amd64.tar.gz"
-      sha256 "dbe4a0407038bba705ed27e81f3151a7dfb1efa371509527b6274a153e84f539"
+      url "https://github.com/gembaadvantage/octo/releases/download/v0.10.0/octo_0.10.0_darwin-amd64.tar.gz"
+      sha256 "3693f16f59e32bd57138758afd287ab2c1c93e903f39bd9e6b5289a5cb67b610"
 
       def install
         bin.install "octo"
@@ -24,8 +24,8 @@ class Octo < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gembaadvantage/octo/releases/download/v0.9.0/octo_0.9.0_darwin-arm64.tar.gz"
-      sha256 "fbeff1e11536b1f79519451a20cb3b9c67de24757700572a7f2f4340a79b1af5"
+      url "https://github.com/gembaadvantage/octo/releases/download/v0.10.0/octo_0.10.0_darwin-arm64.tar.gz"
+      sha256 "8319a25f2d899529146cfed1088ae4fedd7a9ac8ec1d7803cb71fec3ed50f188"
 
       def install
         bin.install "octo"
@@ -40,9 +40,9 @@ class Octo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/octo/releases/download/v0.9.0/octo_0.9.0_linux-amd64.tar.gz"
-      sha256 "3e0d1d1303e27114230ff77d8ccf74876783666ef7317549144cc88728de044d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gembaadvantage/octo/releases/download/v0.10.0/octo_0.10.0_linux-arm64.tar.gz"
+      sha256 "eb7e37641f305ecbe36efe0647f6e0c5bc59e8426ffbfefde4dbb8e7131f7377"
 
       def install
         bin.install "octo"
@@ -54,9 +54,9 @@ class Octo < Formula
         (fish_completion/"octo.fish").write fish_output
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gembaadvantage/octo/releases/download/v0.9.0/octo_0.9.0_linux-arm64.tar.gz"
-      sha256 "735840197f9e9eda0745cbfced8bbbcd2162d3829d5c0dc88249de925ada377f"
+    if Hardware::CPU.intel?
+      url "https://github.com/gembaadvantage/octo/releases/download/v0.10.0/octo_0.10.0_linux-amd64.tar.gz"
+      sha256 "858285e1f9f1bd25eb20686800ba3949ddf04a5f96a9dae270276999612424c7"
 
       def install
         bin.install "octo"
