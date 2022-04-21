@@ -5,13 +5,13 @@
 class Uplift < Formula
   desc "Semantic versioning the easy way. Powered by Conventional Commits. Built for use with CI"
   homepage "https://github.com/gembaadvantage/uplift"
-  version "2.6.3"
+  version "2.6.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.6.3/uplift_2.6.3_darwin-x86_64.tar.gz"
-      sha256 "a145a4a5e1ea31ff02c041f9dbddb0676b96b16f8798b6e36d26d0a7a713ee0c"
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.6.4/uplift_2.6.4_darwin-x86_64.tar.gz"
+      sha256 "3ff52bc894baadb2b7ea5935e28dfbd5e7f55a8c72c940871117c41120b1c0df"
 
       def install
         bin.install "uplift"
@@ -27,8 +27,8 @@ class Uplift < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.6.3/uplift_2.6.3_darwin-arm64.tar.gz"
-      sha256 "19b5486a5734d4f892a3d0b11856ef61c06aababf903b483d64ffc69eef5f8f3"
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.6.4/uplift_2.6.4_darwin-arm64.tar.gz"
+      sha256 "80ff2006f6a3f8d950f11fd3eafd4c7ea776a2d65db814979bb7e05825f47875"
 
       def install
         bin.install "uplift"
@@ -47,8 +47,8 @@ class Uplift < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.6.3/uplift_2.6.3_linux-arm64.tar.gz"
-      sha256 "15e6b9ab87ce59f1acd3d91ac92081db65aaefa4ac3c9132dcebb6c9ec684bb5"
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.6.4/uplift_2.6.4_linux-arm64.tar.gz"
+      sha256 "f32602495fdb6331da093e428cf6021cc64147ef1b8ca37e7a75294c63943edc"
 
       def install
         bin.install "uplift"
@@ -64,8 +64,8 @@ class Uplift < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.6.3/uplift_2.6.3_linux-x86_64.tar.gz"
-      sha256 "3869df43995a8bab97155f68c75247965359e1ac7f843812f366b87334812fc4"
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.6.4/uplift_2.6.4_linux-x86_64.tar.gz"
+      sha256 "d19a39eb00cf61960df1c98a395c3b90d8210e6b284f0b544807ed4eefb5767f"
 
       def install
         bin.install "uplift"
