@@ -5,13 +5,13 @@
 class Uplift < Formula
   desc "Semantic versioning the easy way. Powered by Conventional Commits. Built for use with CI"
   homepage "https://upliftci.dev"
-  version "2.8.0"
+  version "2.9.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.8.0/uplift_2.8.0_darwin-arm64.tar.gz"
-      sha256 "eda585cf203d565cc89cbc88ec924c12f228aa82ea2ef1f02110c671e5d67677"
+    if Hardware::CPU.intel?
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.9.0/uplift_2.9.0_darwin-x86_64.tar.gz"
+      sha256 "131fc01c088c39950653423d17b3845e9829fde411ace2542f7ab6c197255f83"
 
       def install
         bin.install "uplift"
@@ -26,9 +26,9 @@ class Uplift < Formula
         (fish_completion/"uplift.fish").write fish_output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.8.0/uplift_2.8.0_darwin-x86_64.tar.gz"
-      sha256 "262e1be9f4dee1aacb2ed26f46cc08869d7e64baee63453950df5fc7e4202322"
+    if Hardware::CPU.arm?
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.9.0/uplift_2.9.0_darwin-arm64.tar.gz"
+      sha256 "5d5af0db559cea09f44f0ecf70020bf3e74f75954a9cd8bd5f5377a7dd2e34bf"
 
       def install
         bin.install "uplift"
@@ -46,9 +46,9 @@ class Uplift < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.8.0/uplift_2.8.0_linux-x86_64.tar.gz"
-      sha256 "1d00796cfe8347f6c3b697c4a64bffcb4f90c82f162d5743f314f1b137abe3a2"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.9.0/uplift_2.9.0_linux-arm64.tar.gz"
+      sha256 "05e88c2b0220b3246fddd93f5eb08629107053db9f053ecdf03e4e1c474cb33d"
 
       def install
         bin.install "uplift"
@@ -63,9 +63,9 @@ class Uplift < Formula
         (fish_completion/"uplift.fish").write fish_output
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.8.0/uplift_2.8.0_linux-arm64.tar.gz"
-      sha256 "2d707040cc89462682008e2c0edcc306114099eea74330e4320e61a8cfabfb69"
+    if Hardware::CPU.intel?
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.9.0/uplift_2.9.0_linux-x86_64.tar.gz"
+      sha256 "b0e82bf41280fadc99b88863c108c1c74669b6e89de184e02e6469275c67d697"
 
       def install
         bin.install "uplift"
