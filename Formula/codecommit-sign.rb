@@ -9,9 +9,9 @@ class CodecommitSign < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.1/codecommit-sign_1.3.1_darwin-arm64.tar.gz"
-      sha256 "d21df149560dbce707ac05fb02615a3570f8f18e917f722e2dbe783c6c066691"
+    if Hardware::CPU.intel?
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.1/codecommit-sign_1.3.1_darwin-x86_64.tar.gz"
+      sha256 "736047af3ceedceff49587d052b4bd733acf033e3a2063e805d3a081aa056249"
 
       def install
         bin.install "codecommit-sign"
@@ -26,9 +26,9 @@ class CodecommitSign < Formula
         (fish_completion/"codecommit-sign.fish").write fish_output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.1/codecommit-sign_1.3.1_darwin-x86_64.tar.gz"
-      sha256 "76aed2db0df1cfac07cddd9f2ad53ff92c34b92a471355f9ef27afba9ebc61f5"
+    if Hardware::CPU.arm?
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.1/codecommit-sign_1.3.1_darwin-arm64.tar.gz"
+      sha256 "fe973e2d3bc58cf0d92c1f4ff2f8e1ef1372c5c8f1facddab7be79d6469192ec"
 
       def install
         bin.install "codecommit-sign"
@@ -46,9 +46,9 @@ class CodecommitSign < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.1/codecommit-sign_1.3.1_linux-x86_64.tar.gz"
-      sha256 "c68cb734c306bd1da161f0115ec529b4bcdd331297bbab6139cf1bc1a68f9894"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.1/codecommit-sign_1.3.1_linux-arm64.tar.gz"
+      sha256 "246397941c74e3fcc264ceab65d75439b2493876ae1aa2ba5b1bcd6c37baed0f"
 
       def install
         bin.install "codecommit-sign"
@@ -63,9 +63,9 @@ class CodecommitSign < Formula
         (fish_completion/"codecommit-sign.fish").write fish_output
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.1/codecommit-sign_1.3.1_linux-arm64.tar.gz"
-      sha256 "f697c679ca44d6228c560866d43eda4d4fd7cb6bead465f607e55245c971ea56"
+    if Hardware::CPU.intel?
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.1/codecommit-sign_1.3.1_linux-x86_64.tar.gz"
+      sha256 "0172331620f5ab218e44182128e5909a809db285098c628700df6f455a6b617a"
 
       def install
         bin.install "codecommit-sign"
