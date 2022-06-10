@@ -5,13 +5,13 @@
 class CodecommitSign < Formula
   desc "Generate a signed AWS V4 CodeCommit URL directly from an IAM role. No dedicated CodeCommit credentials needed"
   homepage "https://github.com/gembaadvantage/codecommit-sign"
-  version "1.3.1"
+  version "1.4.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.1/codecommit-sign_1.3.1_darwin-x86_64.tar.gz"
-      sha256 "736047af3ceedceff49587d052b4bd733acf033e3a2063e805d3a081aa056249"
+    if Hardware::CPU.arm?
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.4.0/codecommit-sign_1.4.0_darwin-arm64.tar.gz"
+      sha256 "7515288462aa86f3b6c6f466400b7483951412c4e4544cd37121c6b87dfc8fbf"
 
       def install
         bin.install "codecommit-sign"
@@ -24,11 +24,13 @@ class CodecommitSign < Formula
 
         fish_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "fish")
         (fish_completion/"codecommit-sign.fish").write fish_output
+
+        man1.install "manpages/codecommit-sign.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.1/codecommit-sign_1.3.1_darwin-arm64.tar.gz"
-      sha256 "fe973e2d3bc58cf0d92c1f4ff2f8e1ef1372c5c8f1facddab7be79d6469192ec"
+    if Hardware::CPU.intel?
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.4.0/codecommit-sign_1.4.0_darwin-x86_64.tar.gz"
+      sha256 "3ede19f80a5ce75cdd28ee3ef8207c30699a811a2a4dc63fcd6519d1be8aec29"
 
       def install
         bin.install "codecommit-sign"
@@ -41,14 +43,16 @@ class CodecommitSign < Formula
 
         fish_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "fish")
         (fish_completion/"codecommit-sign.fish").write fish_output
+
+        man1.install "manpages/codecommit-sign.1.gz"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.1/codecommit-sign_1.3.1_linux-arm64.tar.gz"
-      sha256 "246397941c74e3fcc264ceab65d75439b2493876ae1aa2ba5b1bcd6c37baed0f"
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.4.0/codecommit-sign_1.4.0_linux-arm64.tar.gz"
+      sha256 "0cbaf480c380db6f6a59de0fa93afd2944f99c21e68352da559e1e0cad04e981"
 
       def install
         bin.install "codecommit-sign"
@@ -61,11 +65,13 @@ class CodecommitSign < Formula
 
         fish_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "fish")
         (fish_completion/"codecommit-sign.fish").write fish_output
+
+        man1.install "manpages/codecommit-sign.1.gz"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.3.1/codecommit-sign_1.3.1_linux-x86_64.tar.gz"
-      sha256 "0172331620f5ab218e44182128e5909a809db285098c628700df6f455a6b617a"
+      url "https://github.com/gembaadvantage/codecommit-sign/releases/download/v1.4.0/codecommit-sign_1.4.0_linux-x86_64.tar.gz"
+      sha256 "2dec529867db98cb4dcf60ed37f18ccbfbc88c2428e59ec252b51d164d34894f"
 
       def install
         bin.install "codecommit-sign"
@@ -78,6 +84,8 @@ class CodecommitSign < Formula
 
         fish_output = Utils.safe_popen_read(bin/"codecommit-sign", "completion", "fish")
         (fish_completion/"codecommit-sign.fish").write fish_output
+
+        man1.install "manpages/codecommit-sign.1.gz"
       end
     end
   end
