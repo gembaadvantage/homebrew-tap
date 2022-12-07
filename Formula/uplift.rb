@@ -5,15 +5,15 @@
 class Uplift < Formula
   desc "Semantic versioning the easy way. Powered by Conventional Commits. Built for use with CI"
   homepage "https://upliftci.dev"
-  version "2.18.1"
+  version "2.19.0"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.18.1/uplift_2.18.1_darwin-x86_64.tar.gz"
-      sha256 "c03eac096c6368871e5aec9f6f4e36507da5b9543e598731a8d2ca9da1132640"
+    if Hardware::CPU.arm?
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.19.0/uplift_2.19.0_darwin-arm64.tar.gz"
+      sha256 "3d754cc17b06b79e8325a3726ffe57d2d623a19177e3d4c9b3fed51b3781102e"
 
       def install
         bin.install "uplift"
@@ -30,9 +30,9 @@ class Uplift < Formula
         man1.install "manpages/uplift.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.18.1/uplift_2.18.1_darwin-arm64.tar.gz"
-      sha256 "35ee16417d44247553ed3390654165801ea849942b151bea909ea7b8d1f5bdc8"
+    if Hardware::CPU.intel?
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.19.0/uplift_2.19.0_darwin-x86_64.tar.gz"
+      sha256 "0aaf3f040da30b3b130dbf6c6dd0327b3b6cd361531ecd2d01865d08c81bc802"
 
       def install
         bin.install "uplift"
@@ -53,8 +53,8 @@ class Uplift < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.18.1/uplift_2.18.1_linux-arm64.tar.gz"
-      sha256 "4c3ce9723825a87d3cf7c2f4963c31d1707c78cea6eb188e8baf84d7c0428a86"
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.19.0/uplift_2.19.0_linux-arm64.tar.gz"
+      sha256 "a453fe60d6dc4f9f0030462dbdc193e111b453eccad6ac78e635649c5f84ef43"
 
       def install
         bin.install "uplift"
@@ -72,8 +72,8 @@ class Uplift < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.18.1/uplift_2.18.1_linux-x86_64.tar.gz"
-      sha256 "3aeeca33e08879d7780a658e33b786e7f02c99b4d34befb82e7c73591b7d7646"
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.19.0/uplift_2.19.0_linux-x86_64.tar.gz"
+      sha256 "8df789b593ef384ce8a3e27d2c8a02d4a6aa0f55a310d5ccc2fb8e184d8897c1"
 
       def install
         bin.install "uplift"
