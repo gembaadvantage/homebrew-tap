@@ -12,8 +12,8 @@ class Uplift < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.21.0/uplift_2.21.0darwin_x86_64.tar.gz"
-      sha256 "2c5aa80243fe1ccd325d5a2ed7cd1588e5d1743e4c9fefe873e6feeffe3594bd"
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.21.0/uplift_2.21.0_darwin-x86_64.tar.gz"
+      sha256 "248959fe24d3e2504ded1a7352cc336999ca7f7aa3da51b7f2124d2b9b7a4dac"
 
       def install
         bin.install "uplift"
@@ -31,8 +31,8 @@ class Uplift < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.21.0/uplift_2.21.0darwin_arm64.tar.gz"
-      sha256 "0e861396276ef83e002a829d5419dbe94db854f60221c58682fcf6e4def1d4a2"
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.21.0/uplift_2.21.0_darwin-arm64.tar.gz"
+      sha256 "45351ec2894905f10c2eeeb9ec7670019815b5de328249e50cb27ed2f00556d7"
 
       def install
         bin.install "uplift"
@@ -53,8 +53,8 @@ class Uplift < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.21.0/uplift_2.21.0linux_x86_64.tar.gz"
-      sha256 "daf2bb4b3129f50e5844b4741efebe9da41c9c2a8d8d3f98dcb452d4972d2ef4"
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.21.0/uplift_2.21.0_linux-x86_64.tar.gz"
+      sha256 "4c54510cd0303b5ed43584722f089e8ea9b37b15948084a474cd50c6dec3faef"
 
       def install
         bin.install "uplift"
@@ -72,8 +72,8 @@ class Uplift < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gembaadvantage/uplift/releases/download/v2.21.0/uplift_2.21.0linux_arm64.tar.gz"
-      sha256 "662e97ae5707203928518f7440deb2f13c9318cbacd1fe87ad5260a0b97401dd"
+      url "https://github.com/gembaadvantage/uplift/releases/download/v2.21.0/uplift_2.21.0_linux-arm64.tar.gz"
+      sha256 "f7ec00cf745928258308170dc79590f90c6b6cd518cd815381c556dccd1bcea2"
 
       def install
         bin.install "uplift"
